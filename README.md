@@ -1,5 +1,4 @@
-# AI4EO-final-project
-# Cloud Coverage Classification Using CNN and Sentinel-2 Data
+# Cloud Coverage Classification using Sentinel-2 Data and convolutional neural networks
 
 <details>
 <summary><strong>Project Overview</strong></summary>
