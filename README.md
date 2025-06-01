@@ -8,6 +8,9 @@ This project is based on the classification of cloud coverage using satellite im
 
 The notebook implements a supervised learning approach where cloud masks were manually generated using IRIS and then used as training labels for a CNN. The final model was tested on unseen regions to assess generalisation.
 
+This model was trained and tested on one image, shown below, with it being split into testing and training regions to, then rollout to test its accuracy across the whole image, the times and dates which were used in the corpencious database 
+
+
 For more detailed instructions and configuration options on setting up IRIS yourself, please refer to the [IRIS GitHub repository](https://github.com/ESA-PhiLab/iris).
 
 </details>
@@ -128,7 +131,8 @@ This varies by region and time-of-day usage. (Our World in Data, 2022)
 - IRIS (n.d.) *IRIS – Intelligently Reinforced Image Segmentation*, ESA PhiLab. [https://github.com/ESA-PhiLab/iris](https://github.com/ESA-PhiLab/iris)  
 - Masanet, E. et al. (2020) ‘Recalibrating global data center energy use estimates’, *Science*, 367(6481), pp. 984–986. DOI: [10.1126/science.aba3758](https://doi.org/10.1126/science.aba3758)  
 - Our World in Data (2022) *Carbon intensity of electricity*. [https://ourworldindata.org/grapher/carbon-intensity-electricity](https://ourworldindata.org/grapher/carbon-intensity-electricity)  
-- Strubell, E., Ganesh, A. and McCallum, A. (2019) ‘Energy and policy considerations for deep learning in NLP’, *ACL Proceedings*, pp. 3645–3650. [https://arxiv.org/abs/1906.02243](https://arxiv.org/abs/1906.02243)  
+- Strubell, E., Ganesh, A. and McCallum, A. (2019) ‘Energy and policy considerations for deep learning in NLP’, *ACL Proceedings*, pp. 3645–3650. [https://arxiv.org/abs/1906.02243](https://arxiv.org/abs/1906.02243)
+- Copernicus: Europe’s eyes on Earth. Available at: https://www.copernicus.eu/en
 
 This project was created for GEOL0069: "Artificial Intelligence For Earth Observation" at University College London (UCL). Some of the notebook code has been adapted and or altered for the purposes and scope of this project.
 </details>
