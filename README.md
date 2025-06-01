@@ -20,10 +20,10 @@ For more detailed instructions and configuration options on setting up IRIS your
 <summary><strong>Workflow Summary</strong></summary>
 
 - **Data Acquisition**: Satellite data was acquired from Copernicus Open Access Hub using Sentinel-2 imagery.
-- **Manual Masking**: IRIS was used to label cloud regions in selected images.
-- **Preprocessing**: RGB bands (B04, B03, B02) were extracted, resized, and normalised.
+- **Manual Masking**: IRIS was used to label cloud regions in selected image.
+- **Preprocessing**: RGB bands (B04, B03, B02) were extracted and resized
 - **Model Architecture**: A lightweight CNN was designed using TensorFlow/Keras.
-- **Training & Evaluation**: The model was trained on labelled data and validated on a geographically distinct region.
+- **Training & Evaluation**: The model was trained on labelled data and validated on a geographically distinct region by splitting the image into test and train regions.
 - **Full Image Rollout**: The trained model was applied to a full-resolution image to assess performance.
 ![Project workflow overview](Images/Project-overview.png)
 </details>
@@ -33,9 +33,12 @@ For more detailed instructions and configuration options on setting up IRIS your
 <details>
 <summary><strong>Why Quick Cloud Coverage Detection is Useful</strong></summary>
 
-- **Image usability filtering**: Quickly discarding cloud-heavy images saves time and processing in downstream tasks such as land use classification, vegetation monitoring, or surface temperature retrieval.
-- **Preprocessing in large pipelines**: In operational satellite systems, identifying unusable imagery before further analysis improves accuracy.
-- **Climate monitoring**: Helps improve cloud cover statistics and support models in atmospheric research.
+
+- **Environmental monitoring and research:** Rapid cloud detection supports climate science by enabling more consistent observations of Earth’s surface. This is particularly important for long-term monitoring of vegetation, surface albedo, glacial change, and urban expansion, where frequent cloud cover can obscure key trends.
+-  **Pre-inference filtering:** Efficient cloud detection enables users to screen satellite imagery before applying more complex models. This is especially useful in workflows involving land classification or spectral analysis, where cloud-contaminated pixels can degrade model performance. Quickly discarding cloud-heavy images saves time and processing in downstream tasks such as land use classification, vegetation monitoring, or surface temperature retrieval.
+
+- **Scalable deployment across datasets:** The trained CNN model developed in this project can be applied automatically to large volumes of Sentinel-2 imagery. This facilitates the rapid flagging or exclusion of unusable scenes, making it practical to run in batch processing or monitoring pipelines.
+
 </details>
 
 ---
@@ -136,3 +139,7 @@ This varies by region and time-of-day usage. (Our World in Data, 2022)
 
 This project was created for GEOL0069: "Artificial Intelligence For Earth Observation" at University College London (UCL). Some of the notebook code has been adapted and or altered for the purposes and scope of this project.
 </details>
+
+
+
+
