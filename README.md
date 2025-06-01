@@ -9,7 +9,7 @@ This project is based on the classification of cloud coverage using satellite im
 The notebook implements a supervised learning approach where cloud masks were manually generated using IRIS and then used as training labels for a CNN. The final model was tested on unseen regions to assess generalisation.
 
 This model was trained and tested on one image, shown below, with it being split into testing and training regions to, then rollout to test its accuracy across the whole image, the times and dates which were used in the corpencious database 
-
+![Model creation area](Images/Model_creation_area.png)
 
 For more detailed instructions and configuration options on setting up IRIS yourself, please refer to the [IRIS GitHub repository](https://github.com/ESA-PhiLab/iris).
 
