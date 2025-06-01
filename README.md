@@ -9,8 +9,20 @@ This project is based on the classification of cloud coverage using satellite im
 The notebook implements a supervised learning approach where cloud masks were manually generated using IRIS and then used as training labels for a CNN. The final model was tested on unseen regions to assess generalisation.
 
 For more detailed instructions and configuration options on setting up IRIS yourself, please refer to the [IRIS GitHub repository](https://github.com/ESA-PhiLab/iris).
-![Project Overview](Images/Project-overview.png "Classification Workflow")
 
+</details>
+
+---
+<details>
+<summary><strong>Workflow Summary</strong></summary>
+
+- **Data Acquisition**: Satellite data was acquired from Copernicus Open Access Hub using Sentinel-2 imagery.
+- **Manual Masking**: IRIS was used to label cloud regions in selected images.
+- **Preprocessing**: RGB bands (B04, B03, B02) were extracted, resized, and normalised.
+- **Model Architecture**: A lightweight CNN was designed using TensorFlow/Keras.
+- **Training & Evaluation**: The model was trained on labelled data and validated on a geographically distinct region.
+- **Full Image Rollout**: The trained model was applied to a full-resolution image to assess performance.
+![Project workflow overview](Images/Project-overview.png)
 </details>
 
 ---
@@ -31,26 +43,12 @@ For more detailed instructions and configuration options on setting up IRIS your
 A Convolutional Neural Network (CNN) is a type of deep learning model specifically designed for processing image data. Unlike traditional neural networks, CNNs use layers called convolutional layers that apply filters (or kernels) across an image to detect patterns such as edges, shapes, textures, and other spatial features.
 
 This makes CNNs particularly well-suited for image classification tasks like cloud detection in satellite imagery, where spatial relationships and patterns are key. By stacking multiple convolutional layers, the model can learn increasingly complex visual features — starting from basic edges to full cloud formations — allowing it to distinguish between cloudy and non-cloudy areas with high accuracy.
-
+![CNN architecture diagram](Images/CNN-explained.png)
 **CNNs are powerful because they:**
 
 - Learn directly from raw image data.
 - Preserve spatial structure (unlike fully connected layers).
 - Are translation-invariant — meaning they recognize features anywhere in the image.
-
-</details>
-
----
-
-<details>
-<summary><strong>Workflow Summary</strong></summary>
-
-- **Data Acquisition**: Satellite data was acquired from Copernicus Open Access Hub using Sentinel-2 imagery.
-- **Manual Masking**: IRIS was used to label cloud regions in selected images.
-- **Preprocessing**: RGB bands (B04, B03, B02) were extracted, resized, and normalised.
-- **Model Architecture**: A lightweight CNN was designed using TensorFlow/Keras.
-- **Training & Evaluation**: The model was trained on labelled data and validated on a geographically distinct region.
-- **Full Image Rollout**: The trained model was applied to a full-resolution image to assess performance.
 
 </details>
 
@@ -63,7 +61,7 @@ This makes CNNs particularly well-suited for image classification tasks like clo
 - NumPy  
 - Matplotlib  
 - Scikit-image  
-- netCDF4 (for Sentinel-3 support if extended)
+- netCDF4
 
 </details>
 
@@ -72,9 +70,11 @@ This makes CNNs particularly well-suited for image classification tasks like clo
 <details>
 <summary><strong>Results</strong></summary>
 
-- The CNN achieved strong visual correspondence between predicted cloud masks and manually labelled ground truth.
-- Full-image inference worked effectively when normalisation and patch reassembly were handled correctly.
+The CNN achieved strong visual correspondence between predicted cloud masks and manually labelled ground truth. Once trained, the model was able to generalise to unseen regions with reasonable consistency, highlighting distinct cloudy vs. clear zones across large Sentinel-2 scenes.
 
+During the test full-image rollout, the model processed over 13,000 3×3 patches extracted from the ROI of the Sentinel-2 RGB image. Prediction results were reshaped and plotted as a 2D classification map. After correcting for input scaling and ensuring proper normalisation, the predicted cloud mask showed good spatial alignment with known cloud-covered regions.
+
+To quantify performance, the model also calculated an estimated cloud coverage percentage across the full scene using pixel-wise class predictions. The final CNN output allowed for rapid identification of high-cloud-coverage scenes, useful for filtering low-utility images in Earth Observation pipelines.
 </details>
 
 ---
