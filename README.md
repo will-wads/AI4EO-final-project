@@ -130,4 +130,5 @@ This varies by region and time-of-day usage. (Our World in Data, 2022)
 - Our World in Data (2022) *Carbon intensity of electricity*. [https://ourworldindata.org/grapher/carbon-intensity-electricity](https://ourworldindata.org/grapher/carbon-intensity-electricity)  
 - Strubell, E., Ganesh, A. and McCallum, A. (2019) ‘Energy and policy considerations for deep learning in NLP’, *ACL Proceedings*, pp. 3645–3650. [https://arxiv.org/abs/1906.02243](https://arxiv.org/abs/1906.02243)  
 
+This project was created for GEOL0069: "Artificial Intelligence For Earth Observation" at University College London (UCL). Some of the notebook code has been adapted and or altered for the purposes and scope of this project.
 </details>
