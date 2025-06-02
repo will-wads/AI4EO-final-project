@@ -79,7 +79,7 @@ This makes CNNs particularly well-suited for image classification tasks like clo
 
 The CNN achieved strong visual correspondence between predicted cloud masks and manually labelled ground truth. Once trained, the model was able to generalise to unseen regions with reasonable consistency, highlighting distinct cloudy vs. clear zones across large Sentinel-2 scenes.
 
-During the test full-image rollout, the model processed over 13,000 3×3 patches extracted from the ROI of the Sentinel-2 RGB image. Prediction results were reshaped and plotted as a 2D classification map. After correcting for input scaling and ensuring proper normalisation, the predicted cloud mask showed good spatial alignment with known cloud-covered regions.
+The predicted cloud mask showed good spatial alignment with known cloud-covered regions.
 
 To quantify performance, the model also calculated an estimated cloud coverage percentage across the full scene using pixel-wise class predictions. The final CNN output allowed for rapid identification of high-cloud-coverage scenes, useful for filtering low-utility images in Earth Observation pipelines.
 </details>
