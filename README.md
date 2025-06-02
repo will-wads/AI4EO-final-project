@@ -3,6 +3,8 @@
 <details>
 <summary><strong>Project Overview</strong></summary>
 
+Descriptive video: https://youtu.be/ihMHwKFpDAA
+
 This project is based on the classification of cloud coverage using satellite imagery, specifically data from Sentinel-2. The goal is to accurately detect the presence and extent of clouds in imagery using deep learning, namely Convolutional Neural Networks (CNNs). This task is increasingly critical in remote sensing applications, as cloud contamination can severely affect the quality and usability of satellite data.
 
 The notebook implements a supervised learning approach where cloud masks were manually generated using IRIS and then used as training labels for a CNN.
