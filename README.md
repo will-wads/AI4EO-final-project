@@ -139,6 +139,8 @@ This varies by region and time-of-day usage. (Our World in Data, 2022)
 - Copernicus: Europe’s eyes on Earth. Available at: https://www.copernicus.eu/en
 
 This project was created for GEOL0069: "Artificial Intelligence For Earth Observation" at University College London (UCL). Some of the notebook code has been adapted and or altered for the purposes and scope of this project.
+
+Aspects of this notebook were aided through the use of artificial intelligence for the aspects of proofing, code support, and structure.
 </details>
 
 
